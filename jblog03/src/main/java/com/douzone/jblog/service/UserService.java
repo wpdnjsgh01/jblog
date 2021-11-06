@@ -17,13 +17,12 @@ public class UserService {
 	}
 
 	public UserVO getUser(String email, String password) {
-		// TODO Auto-generated method stub
 		return null;
 	}
-
-//	public void updateUser(UserVO userVo) {
-//		userRepository.update(userVo);
-//	}
+	
+	public UserVO getId(String id) {
+		return userRepository.getId(id);
+	}
 
 
 }

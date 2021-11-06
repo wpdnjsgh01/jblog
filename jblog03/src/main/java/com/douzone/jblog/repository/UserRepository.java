@@ -1,8 +1,5 @@
 package com.douzone.jblog.repository;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -25,4 +22,9 @@ public class UserRepository {
 		int count = sqlSession.update("user.update", vo);
 		return count == 1;
 	}
+	
+	public UserVO getId(String id) {
+		return sqlSession.selectOne("user.getId", id);
+	}
+	
 }
