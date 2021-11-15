@@ -150,4 +150,14 @@
 			</otherwise>
 		</choose>	
 	</select>
+	
+	<select id="findAll" resultType="blogvo">
+		<![CDATA[
+		  select id, title, logo
+		    from blog
+		    where id = #{id}
+		order by reg_date desc
+		]]>
+	</select>
+	
 </mapper>

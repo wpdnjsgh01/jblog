@@ -13,6 +13,7 @@ import org.springframework.web.method.support.ModelAndViewContainer;
 import com.douzone.jblog.vo.UserVO;
 
 public class AuthUserHandlerMethodArgumentResolver implements HandlerMethodArgumentResolver {
+	
 	@Override
 	public Object resolveArgument(
 			MethodParameter parameter,
@@ -30,6 +31,7 @@ public class AuthUserHandlerMethodArgumentResolver implements HandlerMethodArgum
 		}
 		
 		return session.getAttribute("authUser");
+		
 	}
 
 	@Override
@@ -47,5 +49,7 @@ public class AuthUserHandlerMethodArgumentResolver implements HandlerMethodArgum
 		}
 		
 		return true;
+		
 	}
+	
 }

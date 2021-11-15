@@ -19,6 +19,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 			throws Exception {
 		
 		//1. handler 종류 확인
+		// 핸들러가 HandlerMethod 형식이 아닐경우에는 반환
 		if(handler instanceof HandlerMethod == false) {
 			return true;
 		}

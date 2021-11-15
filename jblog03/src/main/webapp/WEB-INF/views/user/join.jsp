@@ -88,13 +88,19 @@ $(function(){
 	<div class="center-content">
 		<h1 class="logo" style="background:url(${pageContext.request.contextPath}/assets/images/logo.jpg) no-repeat 0 0">JBlog</h1>
 		<ul class="menu">
-			<li><a href="${pageContext.request.contextPath}/user/login">로그인</a></li>
-			<li><a href="${pageContext.request.contextPath}/user/join">회원가입</a></li>
-			<li><a href="${pageContext.request.contextPath}/user/logout">로그아웃</a></li>
-			<li><a href="${pageContext.request.contextPath}/blog">내블로그</a></li>
+			<c:choose>
+			<c:when test="${empty User }">
+				<li><a href="${pageContext.request.contextPath}/user/login">로그인</a></li>
+				<li><a href="${pageContext.request.contextPath}/user/join">회원가입</a></li>
+			</c:when>
+			<c:otherwise>
+				<li><a href="${pageContext.request.contextPath}/user/logout">로그아웃</a></li>
+				<li><a href="${pageContext.request.contextPath}/blog">내블로그</a></li>
+			</c:otherwise>
+			</c:choose>
 		</ul>
 		<form class="join-form" id="join-form" method="post" onsubmit="return finallyCheck();" 
-		action="${pageContext.request.contextPath }/user/joinsuccess">
+		action="${pageContext.request.contextPath }/user/join">
 			<label class="block-label" for="name">이름</label>
 			
 			<!-- name value -->

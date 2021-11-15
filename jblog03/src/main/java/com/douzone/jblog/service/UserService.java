@@ -16,8 +16,8 @@ public class UserService {
 		userRepository.insert(vo);
 	}
 
-	public UserVO getUser(String email, String password) {
-		return null;
+	public UserVO getUser(String id, String password) {
+		return userRepository.getIdAndPassword(id, password);
 	}
 	
 	public UserVO getId(String id) {
